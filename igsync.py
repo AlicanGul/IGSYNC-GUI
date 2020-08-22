@@ -1,6 +1,6 @@
 # a. gul, temmuz 2020 
 #------------------------
-# IGSYNC 
+# IGSYNC-GUI
 #------------------------
 # IGPSPORT surus dosyalarini PC'ye yedeklemek icin kullanilir.
 #-------------------------------------------------------------
