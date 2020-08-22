@@ -42,6 +42,7 @@ def cihazBul():
             kaynak_yol = '{}:\\iGPSPORT\\Activities'.format(harf)
             global b_esitle_aktif
             b_esitle_aktif = True
+            t_durum.set("Cihaz bulundu.")
             break
     if kaynak_yol == "":
         t_durum.set("Cihaz bulunamadi.")
@@ -51,22 +52,26 @@ def cihazBul():
 
 def cbYenile():
     t_cihaz.set( cihazBul() )
-    t_durum.set("Cihaz bulundu.")
+    
 
 def cbGozat():
-    t_hedef_yol.set( tk.filedialog.askdirectory() )
+    temp_hedef_yol = tk.filedialog.askdirectory()
+    if temp_hedef_yol != "":
+        t_hedef_yol.set()
+    else:
+        t_durum.set("Klasor secilmedigi icin degistirilmedi.")
     ayarlar['genel']['son_hedef_yol'] = t_hedef_yol.get()
     with open (ayar_dosyasi, mode='w') as ayardosyasi:
         ayarlar.write( ayardosyasi )
 
 def cbEsitle():
     if b_esitle_aktif:
-        if os.path.exists(t_hedef_yol.get()):
+        if os.path.exists(t_hedef_yol.get()) & os.path.exists(t_cihaz.get()) :
             t_durum.set("Esitleniyor...")
             sync( t_cihaz.get(), t_hedef_yol.get(), 'sync', verbose=True, exclude=[r"^List"] )
             t_durum.set("Esitleme tamamlandi.")
         else:
-            t_durum.set("Hedef klasor bulunamadi.")
+            t_durum.set("Hedef veya kaynak klasor bulunamadi.")
     else:
         t_durum.set("Kaynak ve hedef yol secin.")
 
