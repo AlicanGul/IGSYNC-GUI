@@ -12,3 +12,5 @@ Dosyalar klasore esitlendikten sonra baska uygulamalarda kullanilmak uzere yedek
 * IGS50E ile test edildi. iGPSPORT\Activities klasorunun varligina gore cihazi tanir.
 * Hedef yolu bir kere secmek yeterli. Sonraki acilislar icin kayit ediliyor.
 * Python ile calistirmak icin gerekli kutuphaneler pip ile yuklenebilir.
+* Sadece Windows uyumludur.
+
