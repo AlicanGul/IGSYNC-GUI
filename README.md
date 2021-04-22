@@ -1,5 +1,5 @@
 # IGSYNC GUI
- IGPSport yol bilgisayarlari icin yedekleme amacli USB senkronizasyon programı.
+ IGPSport yol bilgisayarlari icin yedekleme amacli USB senkronizasyon programi.
 
  1. Sag ustte Code > Download ZIP ile indir, dosyalari klasore cikart.
  2. IGPSport cihazini USB ile baglayip ac.
